@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soal 1</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<p>uang = 50000, harga 1 mie = 2500</p>
+
+	<p>promosi “setiap pembelian 4 mie instan, akan mendapatkan bonus 1 mie instan”</p>
+
+	<p id="hasil"></p>
+
+	<script type="text/javascript">
+		
+		function beli() {
+
+			var uang = 50000;
+			var harga = 2500;
+
+			var total = 50000/2500;
+
+			var bonus = 0;
+			var i = 1;
+			for (i; i <= total; i++) {
+				if (i % 4 == 0) {
+					bonus += 1;
+				}
+			}
+
+			total += bonus;
+
+			// return total;
+			document.getElementById('hasil').innerHTML = "Jumlah mie yang didapat = " + total;
+
+		}
+
+		beli();
+
+	</script>
+
+</body>
+</html>
