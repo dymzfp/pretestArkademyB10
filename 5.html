@@ -7,10 +7,10 @@
 <body>
 
 	<p>Masukan string = <input type="text" id="string"></p>
-	<p>Masukan kata yang ingin dicari = <input type="text" id="cari"></p>
+	<p>Masukan kata yang ingin dicari = <input type="text" id="cari" onkeyup="cari()"></p>
 
 	<br>
-	<button onclick="cari()">Cari</button>
+	<!-- <button onclick="cari()">Cari</button> -->
 
 	<p id="hasil"></p>
 
@@ -22,7 +22,7 @@
 
 			var cari = kata;
 
-			if(cari.length < str.length) {
+			if(cari.length <= str.length) {
 
 				var pan = str.length - cari.length;
 
@@ -69,24 +69,31 @@
 			var string = x.value;
 			var cari = y.value;
 
-			var hasil = proses(string, cari);
+			if (cari != "") {
 
-			var pesan = "";
+				var hasil = proses(string, cari);
 
-			// pesan jika kata pencari lebih panjang dari string
-			if (hasil < 0) {
-				pesan = "panjang kata pencarian tidak boleh lebih dari panjang string";
+				var pesan = "";
+
+				// pesan jika kata pencari lebih panjang dari string
+				if (hasil < 0) {
+					pesan = "panjang kata pencarian tidak boleh lebih dari panjang string";
+				}
+				// pesan jika tidak ditemukan kata
+				else if (hasil == 0) {
+					pesan = "tidak ditemukan string";
+				}
+				// pesan jumlah kata yang ditemukan
+				else {
+					pesan = "ditemukan " + hasil + " kali";
+				}
+
+				document.getElementById('hasil').innerHTML = pesan;
+
 			}
-			// pesan jika tidak ditemukan kata
-			else if (hasil == 0) {
-				pesan = "tidak ditemukan string";
-			}
-			// pesan jumlah kata yang ditemukan
 			else {
-				pesan = "ditemukan " + hasil + " kali";
+				document.getElementById('hasil').innerHTML = "";
 			}
-
-			document.getElementById('hasil').innerHTML = pesan;
 
 		}
 

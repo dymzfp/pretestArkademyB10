@@ -6,9 +6,9 @@
 </head>
 <body>
 
-	Masukan bilangan desimal : <input type="text" id="bil">
+	Masukan bilangan desimal : <input type="text" id="bil" onkeyup="konver()">
 
-	<br><button onclick="konver()">Convert</button>
+	<!-- <br><button onclick="konver()">Convert</button> -->
 
 	<p id="hasil"></p>
 
@@ -20,7 +20,7 @@
 			var bin = "";
 
 			// melakukan perulangan untuk membagi bilangan dengan angka 2
-			do {
+			while(ang > 0) {
 
 				if (ang%2==0) {
 					// jika sisa 0 maka tambahkan 0 ke variabel bin 
@@ -38,7 +38,7 @@
 				}
 
 			}
-			while(ang > 0);
+			// while(ang > 0);
 
 			// membalikan string bin
 			var balik = bin.split('').reverse().join('');
@@ -54,9 +54,16 @@
 			var x = document.getElementById('bil');
 			var bil = x.value;
 
-			var has = desimal(bil);
+			if (bil != "") {
+				var has = desimal(bil);
 
-			document.getElementById('hasil').innerHTML = "Angka biner = " + has + "<sub>2</sub>";
+				document.getElementById('hasil').innerHTML = "Angka biner = " + has + "<sub>2</sub>";
+			}
+			else {
+				document.getElementById('hasil').innerHTML = "";
+			}
+
+			
 
 		}
 
