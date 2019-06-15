@@ -4,7 +4,7 @@ Jawaban Soal Pretest Arkademy Batch 10 Jogja
 #### Soal 1
 *Javascript*
 
-Simple Math
+**Simple Math**
 
 
 
@@ -21,7 +21,7 @@ Segitiga Siku-siku
 #### Soal 3
 *PHP*
 
-Pohon Imajinatif
+**Pohon Imajinatif**
 
   1. jalankan webserver php
   2. masukan tinggi awal dan lama tahun
@@ -31,7 +31,7 @@ Pohon Imajinatif
 #### Soal 4
 *Javascript*
 
-Data Sorting
+**Data Sorting**
 
 
 
@@ -45,6 +45,8 @@ Data Sorting
 
 #### Soal 6
 *Javascript*
+
+**Decimal to Binary**
 
   1. jalankan di browser
   2. masukan bilangan desimal
