@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soal 5</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<p>Masukan string = <input type="text" id="string"></p>
+	<p>Masukan kata yang ingin dicari = <input type="text" id="cari"></p>
+
+	<br>
+	<button onclick="cari()">Cari</button>
+
+	<p id="hasil"></p>
+
+	<script type="text/javascript">
+		
+		function proses(string, kata) {
+
+			var str = string;
+
+			var cari = kata;
+
+			if(cari.length < str.length) {
+
+				var pos = "";
+
+				var pan = str.length - cari.length;
+
+				// console.log(pan);
+
+				var temu = 0;
+				for(var i = 0; i < pan+1; i++){
+					
+					var xx = str.substring(i, cari.length+i);			    	
+			    	// console.log(xx);
+
+					if( xx.search(cari) >= 0 ){
+						temu += 1
+					}		    	
+			    
+			    }
+
+			    // balik string
+			    var balik = str.split('').reverse().join('');
+
+			    for(var i = 0; i < pan+1; i++){
+					
+					var yy = balik.substring(i, cari.length+i);			    	
+			    	// console.log(xx);
+
+					if( yy.search(cari) >= 0 ){
+						temu += 1
+					}		    	
+			    
+			    }
+
+			    return temu;
+				
+			}
+			else {
+				return -1;
+			}
+
+		}
+
+		function cari() {
+
+			var x = document.getElementById('string');
+			var y = document.getElementById('cari');
+
+			var string = x.value;
+			var cari = y.value;
+
+			var hasil = proses(string, cari);
+
+			var pesan = "";
+			if (hasil < 0) {
+				pesan = "panjang kata pencarian tidak boleh lebih dari panjang string";
+			}
+			else if (hasil == 0) {
+				pesan = "tidak ditemukan string";
+			}
+			else {
+				pesan = "ditemukan " + hasil + " kali";
+			}
+
+			document.getElementById('hasil').innerHTML = pesan;
+
+		}
+
+	</script>
+
+</body>
+</html>

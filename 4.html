@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soal 4</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<p id="terkecil"></p>
+	<p id="terbesar"></p>
+	<p id="asc"></p>
+	<p id="desc"></p>
+
+	<script type="text/javascript">
+		
+		function arr() {
+ 
+			var data = [6,22,34,15,2,13,26,57,42,32];
+
+			var terkecil = nilaiTerkecil(data);
+			var terbesar = nilaiTerbesar(data);
+
+			var asc = "";
+			for (var i = 0; i < data.length; i++) {
+				data.sort(function(a, b){return a - b});
+				asc += data[i];
+				if (i < (data.length-1) ) {
+					asc += ", ";
+				}
+			}
+
+			var desc = "";
+			for (var i = 0; i < data.length; i++) {
+				data.sort(function(a, b){return b - a});
+				desc += data[i];
+				if (i < (data.length-1) ) {
+					desc += ", ";
+				}
+			}
+
+
+			document.getElementById('terkecil').innerHTML = "Nilai terkecil = " + terkecil;
+			document.getElementById('terbesar').innerHTML = "Nilai terbesar = " + terbesar;
+			
+			document.getElementById('asc').innerHTML = "Ascending sort = " + asc;
+			document.getElementById('desc').innerHTML = "Descending sort = " + desc;
+
+		}	
+
+		function nilaiTerbesar(array) {
+
+			var len = array.length;
+			var max = -Infinity;
+			
+			while (len--) {
+				if (array[len] > max) {
+			    	max = array[len];
+			    }
+			}
+			
+			return max;
+		}
+
+		function nilaiTerkecil(array) {
+
+			var len = array.length;
+			var min = Infinity;
+			
+			while (len--) {
+				if (array[len] < min) {
+			    	min = array[len];
+			    }
+			}
+			
+			return min;
+		}
+
+
+		arr();
+
+	</script>
+
+</body>
+</html>
