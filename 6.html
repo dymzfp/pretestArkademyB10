@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soal 6</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	Masukan bilangan desimal : <input type="text" id="bil">
+
+	<br><button onclick="konver()">Convert</button>
+
+	<p id="hasil"></p>
+
+	<script type="text/javascript">
+		
+		function desimal(ang) {
+			// console.log(data);
+
+			var bin = "";
+
+			// melakukan perulangan untuk membagi bilangan dengan angka 2
+			do {
+
+				if (ang%2==0) {
+					// jika sisa 0 maka tambahkan 0 ke variabel bin 
+					bin += "0";
+
+					// lakukan pembagian
+					ang = ang/2;
+				}
+				else {
+					// jika sisa tidak 0 tambahkan 1 ke variabel bin
+					bin += "1";
+
+					// tambahkan 1 ke ang lalu bagi 2
+					ang = (ang-1)/2;
+				}
+
+			}
+			while(ang > 0);
+
+			// membalikan string bin
+			var balik = bin.split('').reverse().join('');
+			// koversi hasil ke interger
+			var hasil = Number(balik);
+
+			return hasil;
+
+		}
+
+		function konver() {
+
+			var x = document.getElementById('bil');
+			var bil = x.value;
+
+			var has = desimal(bil);
+
+			document.getElementById('hasil').innerHTML = bil + "<sub>10</sub> = " + has + "<sub>2</sub>";
+
+		}
+
+	</script>
+
+</body>
+</html>
