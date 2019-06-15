@@ -24,18 +24,14 @@
 
 			if(cari.length < str.length) {
 
-				var pos = "";
-
 				var pan = str.length - cari.length;
-
-				// console.log(pan);
 
 				var temu = 0;
 				for(var i = 0; i < pan+1; i++){
 					
 					var xx = str.substring(i, cari.length+i);			    	
-			    	// console.log(xx);
 
+					// jika ketemu variabel temu +1
 					if( xx.search(cari) >= 0 ){
 						temu += 1
 					}		    	
@@ -48,8 +44,8 @@
 			    for(var i = 0; i < pan+1; i++){
 					
 					var yy = balik.substring(i, cari.length+i);			    	
-			    	// console.log(xx);
 
+					// jika ketemu variabel temu +1
 					if( yy.search(cari) >= 0 ){
 						temu += 1
 					}		    	
@@ -76,12 +72,16 @@
 			var hasil = proses(string, cari);
 
 			var pesan = "";
+
+			// pesan jika kata pencari lebih panjang dari string
 			if (hasil < 0) {
 				pesan = "panjang kata pencarian tidak boleh lebih dari panjang string";
 			}
+			// pesan jika tidak ditemukan kata
 			else if (hasil == 0) {
 				pesan = "tidak ditemukan string";
 			}
+			// pesan jumlah kata yang ditemukan
 			else {
 				pesan = "ditemukan " + hasil + " kali";
 			}

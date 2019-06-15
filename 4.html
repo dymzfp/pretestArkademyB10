@@ -22,7 +22,10 @@
 
 			var asc = "";
 			for (var i = 0; i < data.length; i++) {
+
+				// short array asc
 				data.sort(function(a, b){return a - b});
+				
 				asc += data[i];
 				if (i < (data.length-1) ) {
 					asc += ", ";
@@ -31,7 +34,10 @@
 
 			var desc = "";
 			for (var i = 0; i < data.length; i++) {
+
+				// short array desc
 				data.sort(function(a, b){return b - a});
+				
 				desc += data[i];
 				if (i < (data.length-1) ) {
 					desc += ", ";
@@ -47,6 +53,7 @@
 
 		}	
 
+		// fungsi cari nilai terbesar
 		function nilaiTerbesar(array) {
 
 			var len = array.length;
@@ -61,6 +68,7 @@
 			return max;
 		}
 
+		// fungsi cari nilai terkecil
 		function nilaiTerkecil(array) {
 
 			var len = array.length;

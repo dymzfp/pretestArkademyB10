@@ -26,14 +26,14 @@
 					// jika sisa 0 maka tambahkan 0 ke variabel bin 
 					bin += "0";
 
-					// lakukan pembagian
+					// lakukan pembagian dengan 2
 					ang = ang/2;
 				}
 				else {
 					// jika sisa tidak 0 tambahkan 1 ke variabel bin
 					bin += "1";
 
-					// tambahkan 1 ke ang lalu bagi 2
+					// kurangi 1 ke ang lalu bagi 2
 					ang = (ang-1)/2;
 				}
 
@@ -56,7 +56,7 @@
 
 			var has = desimal(bil);
 
-			document.getElementById('hasil').innerHTML = bil + "<sub>10</sub> = " + has + "<sub>2</sub>";
+			document.getElementById('hasil').innerHTML = "Angka biner = " + has + "<sub>2</sub>";
 
 		}
 
