@@ -12,8 +12,8 @@ PHP
 
 Segitiga Siku-siku
 
-  1.jalankan webserver php
-  2.masukan alas/tinggi
+  1 jalankan webserver php
+  2 masukan alas/tinggi
   
 
 #### Soal 3
